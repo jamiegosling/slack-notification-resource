@@ -20,3 +20,6 @@ Send message to Slack, with the configured parameters.
 * `icon_url`: *Optional.* Override icon by providing URL to the image.
 * `icon_emoji`: *Optional.* Override icon by providing emoji code (e.g. `:ghost:`).
 
+## Deploy with BOSH
+
+See https://github.com/cloudfoundry-community/slack-notification-resource-boshrelease for a BOSH release and instructions for integrating this resource into your Concourse via BOSH.
