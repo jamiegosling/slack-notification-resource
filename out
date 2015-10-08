@@ -16,7 +16,7 @@ webhook_url=$(jq -r '.source.url' < $payload)
 
 body=$(jq -c '{"text":(.params.text // ""), "username": (.params.username // null), "icon_url": (.params.icon_url // null), "icon_emoji": (.params.icon_emoji // null), "channel": (.params.channel // null)}' < $payload)
 
-curl -X POST --data-urlencode "payload=$body" $webhook_url
+curl -s -X POST --data-urlencode "payload=$body" $webhook_url
 
 jq -n '{version:{ref:0}}' >&3
 
