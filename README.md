@@ -4,7 +4,7 @@ Forked from https://github.com/Nopik/slack-notification-resource
 
 ## Source Configuration
 
-* `token`: *Required.* The webhook URL as provided by Slack. Usually in the form: `https://hooks.slack.com/services/XXXX`
+* `token`: *Required.* The token provided by slack for the chat API
 
 ## Behavior
 
