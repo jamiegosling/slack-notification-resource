@@ -1,0 +1,1 @@
+docker run --rm -i test /opt/resource/out . < payload.json

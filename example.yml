@@ -1,0 +1,14 @@
+resources:
+  - name: slack
+    type: slack-notification
+    source:
+      token:  ((token))
+
+jobs:
+- name: test
+  plan:
+  - task: test
+  - put: slack
+    params:
+      text: "my message"
+      channel: "my_channel"

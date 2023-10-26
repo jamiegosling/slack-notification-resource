@@ -1,0 +1,9 @@
+{
+    "source": {
+        "token": "slack-token-here"
+    },
+    "params": {
+        "text": "message text",
+        "channel": "channel_name"
+    }
+}
