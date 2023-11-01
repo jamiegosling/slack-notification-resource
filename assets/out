@@ -8,19 +8,20 @@ exec 1>&2
 # for jq
 PATH=/usr/local/bin:$PATH
 
-payload=$(mktemp /tmp/resource-in.XXXXXX)
+payload="$(cat <&0)"
 
-cat > $payload <&0
-echo $payload
-token=$(jq -r '.source.token' < "$payload")
-channel=$(jq -r '.params.channel' < "$payload")
-text=$(jq -r '.params.text' < "$payload")
+token=$(jq -r '.source.token' <<< "$payload")
+channel=$(jq -r '.params.channel' <<< "$payload")
+text=$(jq -r '.params.text' <<< "$payload")
 
+echo $channel
 curl --location 'https://slack.com/api/chat.postMessage' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer '"$token"'' \
 --data-raw '{
     "channel":"'"$channel"'",
-    "text":"'"$text"'"
+    "text":"'"$text"' - '"$BUILD_ID"'"
 }'
 
+#must emit version back to concourse
+jq -n '{version:{ref:"0"}}' >&3
