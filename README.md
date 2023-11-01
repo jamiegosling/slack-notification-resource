@@ -1,5 +1,7 @@
 # Slack notification sending resource 
 
+https://hub.docker.com/repository/docker/jamiegosling/slack-notification-resource
+
 Forked from https://github.com/Nopik/slack-notification-resource
 
 ## Source Configuration
