@@ -20,7 +20,7 @@ curl --location 'https://slack.com/api/chat.postMessage' \
 --header 'Authorization: Bearer '"$token"'' \
 --data-raw '{
     "channel":"'"$channel"'",
-    "text":"'"$text"' - '"$BUILD_ID"'"
+    "text":"'"$text"' - '"$ATC_EXTERNAL_URL"'/builds/'"$BUILD_ID"'"
 }'
 
 #must emit version back to concourse
